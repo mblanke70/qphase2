@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/schwerpunkt');
 
 Route::get ('schwerpunkt', 'KurswahlenController@zeigeSchwerpunkte');
 Route::post('schwerpunkt', 'KurswahlenController@verarbeiteSchwerpunkte');
