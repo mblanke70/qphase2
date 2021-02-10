@@ -94,7 +94,15 @@
         <div class="alert alert-success">
             Die Anzahl der einzubringenden Kurse ({{$summe1}}) ist nicht größer als 36<br />Die Wahl ist gültig.
         </div>
+
+        <div>
+            <a href="#link" class="btn btn-success" role="button">Wahl abgeben</a>
+        </div>
+
     @endif
+
+
+
 
     <!--
 
