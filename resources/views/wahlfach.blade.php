@@ -96,7 +96,7 @@
         </div>
 
         <div>
-            <a href="https://fachwahl.ursulaschule.de/qf" class="btn btn-success" role="button">Wahl abgeben</a>
+            <a href="https://fachwahl.ursulaschule.de/qf" target="_blank" class="btn btn-success" role="button">Wahl abgeben</a>
         </div>
 
     @endif
