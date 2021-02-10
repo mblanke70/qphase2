@@ -46,7 +46,7 @@
                 <td scope="col"></td>
                 <td></td>
                 <td style="text-align: right;">Summe:</td>
-                <td colspan="2">
+                <td colspan="3">
                     @if(isset($summe1)) {{ $summe1 }} Kurse @endif
                     @if(isset($summe2)) ({{ $summe2 }} Stunden) @endif
                 </td>
