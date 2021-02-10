@@ -55,7 +55,7 @@ class KurswahlenController extends Controller
     	switch($schwerpunkt->code) 
     	{
     		case "sp" : 
-                $optionen = Fach::findMany(['EN','FR','LA']);
+                $optionen = Fach::findMany(['EN','FR','LA','SN']);
     			break;
 
 			case "mk" :
@@ -116,7 +116,7 @@ class KurswahlenController extends Controller
     	switch($schwerpunkt->code) 
     	{
     		case "sp" : 
-    			$optionen = Fach::findMany(['EN','FR','LA','DE']);
+    			$optionen = Fach::findMany(['EN','FR','LA','SN','DE']);
     			break;
 
 			case "mk" :
@@ -124,7 +124,7 @@ class KurswahlenController extends Controller
     			break;
     		
   			case "gw" : 
-				$optionen = Fach::findMany(["DE","EN","FR","LA","MA","BI","CH","PH"]); 
+				$optionen = Fach::findMany(["DE","EN","FR","SN","LA","MA","BI","CH","PH"]); 
     			break;
 
     		case "nw" : 
@@ -185,7 +185,7 @@ class KurswahlenController extends Controller
 
     		case "sp" : case "mk" : case "nw" :
                 $optionen = Fach::findMany([
-                    'DE','EN','FR','LA','KU','MU','PW','GE',
+                    'DE','EN','FR','LA','SN','KU','MU','PW','GE',
                     'EK','RK','MA','BI','CH','PH','IF'
                 ]);
     			break;
@@ -398,12 +398,14 @@ class KurswahlenController extends Controller
         }
 
         // wenn Schwerpunkt MK, dann kein Musik P5
+        /*
         if($schwerpunkt->code == 'mk' && !$matrix->pluck('fach')->contains('code', 'MU')) 
         {
             $optionen = $optionen->keyBy('code')->forget('MU');
 
             $warnung["mu"] = "Filter aktiv: Musik kann nicht gewählt werden.";
         }
+        */
 
     	// wenn ein Kernfach fehlt, dann alles raus, was kein Kernfach ist
         if( $kernfaecher->count() == 1 )
