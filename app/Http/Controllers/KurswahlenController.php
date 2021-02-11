@@ -249,7 +249,7 @@ class KurswahlenController extends Controller
 
         $optionen = Fach::findMany([
             'DE','EN','FR','LA','SN','PW','GE','EK',
-            'RK','RE','MA','BI','CH','PH','IF'
+            'RK','RE','MA','BI','CH','PL','PH','IF'
         ]);
 
         // alle bereits gewählte Fächer herausfiltern
@@ -390,7 +390,8 @@ class KurswahlenController extends Controller
         }
 
         // wenn Schwerpunkt GW, dann kein Erdkunde P5
-        if($schwerpunkt->code == 'gw' && !$matrix->pluck('fach')->contains('code', 'EK')) 
+        if($schwerpunkt->code == 'gw' 
+            && !$matrix->pluck('fach')->contains('code', 'EK')) 
         {
             $optionen = $optionen->keyBy('code')->forget('EK');
 
